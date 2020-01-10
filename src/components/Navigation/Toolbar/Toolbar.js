@@ -10,7 +10,7 @@ const toolbar = () => (
         <div className="Logo_toolbar">
             <Logo />
         </div>
-        <nav>
+        <nav className="DesktopOnly">
             <NavigationItems />
         </nav>
     </header>
