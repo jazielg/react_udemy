@@ -30,10 +30,10 @@ class BurgerBuilder extends Component {
     componentDidMount() {
         axios.get('https://react-udemy-burger-ea744.firebaseio.com/ingredients.json')
             .then(response => {
-                this.setState({ingredients: response.data});
+                this.setState({ ingredients: response.data });
             })
             .catch(error => {
-                this.setState({error: true})
+                this.setState({ error: true })
             });
     }
 
@@ -92,7 +92,7 @@ class BurgerBuilder extends Component {
     }
 
     purchaseCancelHandler = () => {
-        this.setState({purchasing: false});
+        this.setState({ purchasing: false });
     }
 
     purchaseContinueHandler = () => {
@@ -119,7 +119,15 @@ class BurgerBuilder extends Component {
         //     .catch(error => {
         //         this.setState({loading: false, purchasing: false});
         //     });
-        this.props.history.push('/checkout');
+        const queryParams = [];
+        for (const i in this.state.ingredients) {
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
+        }
+        const queryString = queryParams.join('&');
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        });
     }
 
     render() {
@@ -129,11 +137,11 @@ class BurgerBuilder extends Component {
         for (let key in disabledInfo) {
             disabledInfo[key] = disabledInfo[key] <= 0
         }
-        
+
         let burger = this.state.error ? <p>Ingredients can't be loaded!</p> : <Spinner />
         let orderSummary = null;
 
-        if(this.state.ingredients) {
+        if (this.state.ingredients) {
             burger = (
                 <Aux>
                     <Burger ingredients={this.state.ingredients} />
@@ -147,14 +155,14 @@ class BurgerBuilder extends Component {
                     />
                 </Aux>
             )
-            orderSummary = <OrderSummary 
-                                ingredients={this.state.ingredients}
-                                price={this.state.totalPrice}
-                                purchaseCancelled={this.purchaseCancelHandler}
-                                purchaseContinued={this.purchaseContinueHandler}
-                            />
+            orderSummary = <OrderSummary
+                ingredients={this.state.ingredients}
+                price={this.state.totalPrice}
+                purchaseCancelled={this.purchaseCancelHandler}
+                purchaseContinued={this.purchaseContinueHandler}
+            />
         }
-        if(this.state.loading) {
+        if (this.state.loading) {
             orderSummary = <Spinner />
         }
         return (
