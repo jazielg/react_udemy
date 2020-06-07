@@ -1,2 +1,6 @@
-export { addIngredient, removeIngredient } from "./BurgerBuilder";
+export {
+  addIngredient,
+  removeIngredient,
+  initIngredients,
+} from "./BurgerBuilder";
 export {} from "./order";
