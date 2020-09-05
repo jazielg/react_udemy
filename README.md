@@ -4,6 +4,7 @@
     <img alt="Login" title="Example" src=".github/login.png" width="250px" />
     <img alt="Burger builder" title="Example" src=".github/burger_builder.png" width="250px" />
     <img alt="Order now" title="Example" src=".github/order_now.png" width="250px" />
+    <img alt="Order confirmation" title="Example" src=".github/order_confirmation.png" width="250px" />
     <img alt="Orders" title="Example" src=".github/orders.png" width="250px" />
 </h1>
 
