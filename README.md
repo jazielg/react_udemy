@@ -1,11 +1,11 @@
 # React - The Complete Guide (incl Hooks, React Router, Redux)
 
 <h1 align="center">
-    <img alt="Login" title="Example" src=".github/login.png" width="250px" />
-    <img alt="Burger builder" title="Example" src=".github/burger_builder.png" width="250px" />
-    <img alt="Order confirmation" title="Example" src=".github/order_confirmation.png" width="250px" />
-    <img alt="Order now" title="Example" src=".github/order_now.png" width="250px" />
-    <img alt="Orders" title="Example" src=".github/orders.png" width="250px" />
+    <img alt="Login" title="Login" src=".github/login.png" width="250px" />
+    <img alt="Burger builder" title="Burger builder" src=".github/burger_builder.png" width="250px" />
+    <img alt="Order confirmation" title="Order confirmation" src=".github/order_confirmation.png" width="250px" />
+    <img alt="Order now" title="Order now" src=".github/order_now.png" width="250px" />
+    <img alt="Orders" title="Orders" src=".github/orders.png" width="250px" />
 </h1>
 
 ## 💻 Projeto
@@ -34,3 +34,7 @@ npm install
 # Iniciar projeto na porta 3000
 npm start
 ```
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
